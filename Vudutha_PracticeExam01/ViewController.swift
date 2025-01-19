@@ -41,24 +41,30 @@ class ViewController: UIViewController {
         
         var category = ""
         var imageName = ""
+        var healthTip = ""
         
         if roundedBmi <= 18.5 {
-            category = "Underweight"
-            imageName = "underweight"
+            category = "Underweight🪫"
+            imageName = "underWeight"
+            healthTip = "Eat more protein and healthy fats."
         } else if roundedBmi <= 24.9 {
-            category = "Normal"
+            category = "Normal👍"
             imageName = "normal"
+            healthTip = "Excellent! Maintain a balanced lifestyle."
         }else if roundedBmi <= 29.9 {
             category = "Overweight"
-            imageName = "overweight"
+            imageName = "overWeight"
+            healthTip = "Lose weight by maintaining a balanced diet less and increasing physical activity."
         }else {
             category = "Obese"
             imageName = "obese"
+            healthTip = "Consult a doctor for personalized advice."
         }
         ResultLabel.text = """
-        Your Body Mass Index is \(roundedBmi)
-        This is considered \(category)
-        """
+Your Body Mass Index is \(roundedBmi). 
+This is considered \(category).
+Healthtip: \(healthTip)
+"""
         Image.image = UIImage(named: imageName)
     }
     
